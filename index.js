@@ -12,6 +12,6 @@ require('./lib/environment_context.js')(app);
 require('./lib/rest_api.js')(app);
 
 // ** UNCOMMENT BELOW ONCE YOU HAVE ADDED CONNECTION STRINGS FOR DATABASE **
-// var database = require('./lib/database_connection.js')(app, credentials);
+ var database = require('./lib/database_connection.js')(app, credentials);
 
 require('./lib/server.js')(app);
