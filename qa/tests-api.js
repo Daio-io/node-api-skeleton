@@ -39,10 +39,5 @@ suite('API tests', function () {
     });
 
 
-    after(function (done) {
-
-        //TODO: code to remove item added to db
-    });
-
 
 });
