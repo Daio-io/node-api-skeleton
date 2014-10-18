@@ -1,0 +1,4 @@
+*.DS_STORE
+# /lib/credentials.js uncomment this after clone
+node_modules
+npm-debug.log
