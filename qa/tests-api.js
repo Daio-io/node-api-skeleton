@@ -6,7 +6,7 @@ suite('API tests', function () {
 
     var baseUrl = 'http://localhost:3000';
 
-    // Sample is a clone of the models sample to mock our mongoose object
+    // Basic sample object to use for post and testing get data assertions
     var sample = {
         name: 'Test',
         digits: 25,
@@ -14,21 +14,22 @@ suite('API tests', function () {
         boo: true
     };
 
-    test('should be able to send and ad a sample to the API', function (done) {
+    test('should be able to send and add a sample to the API', function (done) {
         rest.post(baseUrl + '/api/sample', {
             data: sample
         }).on('success',
-            function (data) {
-                rest.get(baseUrl + '/api/sample/' + data.id).on('success', function () {
+            function (data) { 
+            rest.get(baseUrl + '/api/sample/' + data.id).on('success', function () {
                     assert(data.name === sample.name);
-                    assert(data.digits == sample.digits);
+                    assert(data.digits === sample.digits);
+                    done();
                 });
             });
     });
 
 
     test('should be able to get sample from API', function (done) {
-        rest.post(baseUrl + ' / api / sample ', {
+        rest.post(baseUrl + '/api/sample', {
             data: sample
         }).on('success',
             function (data) {
