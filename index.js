@@ -14,6 +14,6 @@ require('./lib/rest_api.js')(app, rest);
 require('./api/routes.js')(app, rest);
 
 // ** UNCOMMENT BELOW ONCE YOU HAVE ADDED CONNECTION STRINGS FOR DATABASE **
-//var database = require('./lib/database_connection.js')(app, credentials);
+var database = require('./lib/database_connection.js')(app, credentials);
 
 require('./lib/server.js')(app);
