@@ -1,3 +1,7 @@
     language: node_js
     node_js:
         - "0.10"
+    before_script: ./scripts/db_setup.sh
+    after_script: ./scripts/db_teardown.sh
+    
+    

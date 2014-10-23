@@ -15,7 +15,8 @@ suite('API tests', function () {
     };
 
     setup(function () {
-        //TODO: setup tests
+        //Start the server
+        require('../index.js');
     });
 
     test('should be able to send and add a sample to the API', function (done) {
