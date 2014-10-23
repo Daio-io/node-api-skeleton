@@ -1,28 +1,29 @@
 {
-  "name": "node-api-skeleton",
-  "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha -u tdd qa/tests-api.js"
-  },
-  "author": "Daveloper87",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.8.1",
-    "connect-rest": "^1.4.5",
-    "cors": "^2.4.2",
-    "express": "^4.9.0",
-    "express-logger": "0.0.3",
-    "express-session": "^1.8.1",
-    "mongoose": "3.9.2",
-    "morgan": "^1.3.0"
-  },
-  "devDependencies": {
-    "chai": "^1.9.2",
-    "gulp": "^3.8.8",
-    "gulp-mocha": "^1.1.1",
-    "mocha": "^1.21.5",
-    "restler": "^3.2.2"
-  }
+    "name": "node-api-skeleton",
+    "repository": "git@github.com:Daveloper87/node-api-skeleton.git",
+    "version": "0.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha -u tdd qa/tests-api.js"
+    },
+    "author": "Daveloper87",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.8.1",
+        "connect-rest": "^1.4.5",
+        "cors": "^2.4.2",
+        "express": "^4.9.0",
+        "express-logger": "0.0.3",
+        "express-session": "^1.8.1",
+        "mongoose": "3.9.2",
+        "morgan": "^1.3.0"
+    },
+    "devDependencies": {
+        "chai": "^1.9.2",
+        "gulp": "^3.8.8",
+        "gulp-mocha": "^1.1.1",
+        "mocha": "^1.21.5",
+        "restler": "^3.2.2"
+    }
 }
