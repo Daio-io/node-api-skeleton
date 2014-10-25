@@ -5,7 +5,7 @@ A Skeleton API for Node applications using MongoDB
 
     npm install
     
-start you MongoDB locally
+Start you MongoDB locally
     
     mongod
     
@@ -16,3 +16,7 @@ Then run the API:
 To test, run:
 
     npm test
+    
+or run tests and tasks using gulp
+
+    gulp

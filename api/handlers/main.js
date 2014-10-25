@@ -39,3 +39,17 @@ exports.postSample = function (req, content, callback) {
         });
     });
 };
+
+exports.deleteSample = function (req, content, callback) {
+    Sample.remove({
+        _id: req.params.id
+    }, function (err, result) {
+        if (err) return callback({
+            error: 'Failed to delete: may not exist'
+        });
+        callback(null, {
+            deleted: result
+        });
+
+    });
+};
