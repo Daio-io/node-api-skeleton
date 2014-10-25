@@ -10,15 +10,31 @@ exports.getSample = function (req, content, callback) {
         });
         callback(null, {
 
-                name: found.name,
-                digits: found.digits,
-                tags: found.tags,
-                boo: found.boo
-            }
+            name: found.name,
+            digits: found.digits,
+            tags: found.tags,
+            boo: found.boo
+        });
+    });
+};
 
-        )
+exports.getAllSamples = function (req, content, callback) {
+    Sample.find(null, function (err, found) {
+        if (err) return callback({
+            error: 'No samples found'
+        });
+        callback(null, found.map(function (sample) {
+            return {
+                name: sample.name,
+                digits: sample.digits,
+                tags: sample.tags,
+                boo: sample.boo,
+
+            };
+        }));
 
     });
+
 };
 
 exports.postSample = function (req, content, callback) {

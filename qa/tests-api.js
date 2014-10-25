@@ -1,8 +1,8 @@
 var assert = require('chai').assert;
 var http = require('http');
 var rest = require('restler');
-require('../index.js');
 var inserted = {}
+require('../index.js');
 
 suite('API tests', function () {
 
@@ -15,9 +15,9 @@ suite('API tests', function () {
         tags: ['test', 'testing', 'tested'],
         boo: true
     };
-    
+
     setup(function () {
-        
+
     });
 
     test('should be able to send and add a sample to the API', function (done) {
@@ -34,8 +34,20 @@ suite('API tests', function () {
             });
     });
 
+    test('I should be able to get all samples from the API', function (done) {
+        postMessage(sample);
+        postMessage(sample);
+        postMessage(sample).on('success', function (data) {
+            rest.get(baseUrl + '/api/samples').on('success', function (response) {
+                assert(response.length >= 3);
+                done();
+            });
+        });
 
-    test('should be able to get sample from API', function (done) {
+    });
+
+
+    test('I should be able to get sample from API', function (done) {
         postMessage(sample).on('success',
             function (response) {
                 inserted.sample = response.id;
@@ -57,7 +69,7 @@ suite('API tests', function () {
     });
 
     teardown(function () {
-        deleteSample(inserted.sample); // just doing this as a hack for now
+        
     });
 
     function postMessage(postData) {
@@ -65,7 +77,7 @@ suite('API tests', function () {
             data: postData
         })
     };
-    
+
     function deleteSample(id) {
         return rest.del(baseUrl + '/api/sample/' + id);
     };

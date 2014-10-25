@@ -5,6 +5,7 @@ module.exports = function (app, rest) {
 
     //** Routes **//
     rest.get('/sample/:id', main.getSample);
+    rest.get('/samples', main.getAllSamples);
     rest.post('/sample', main.postSample);
     rest.del('/sample/:id', main.deleteSample);
 
